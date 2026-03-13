@@ -29,18 +29,41 @@ export const config = {
       { color: '#EAE0D5', name: 'Ivory' },
     ],
   },
-  location: {
-    name: 'Усадьба Архангельское',
-    address: 'Московская обл., Красногорский р-н, посёлок Архангельское, 1',
-    directions: 'Маршрутка №151 от м. Тушино или такси ~30 мин от МКАД',
-    mapsUrl: 'https://yandex.com/maps/-/CPBTmFis',
-    mapsEmbed: 'https://yandex.com/maps/-/CPBTmFis',
-    photos: [
-      { src: null, label: 'Розовый сад' },
-      { src: null, label: 'Белый зал' },
-      { src: null, label: 'Открытая терраса' },
-    ],
-  },
+location: {
+  directions: '',
+  venues: [
+    {
+      id: 'ceremony',
+      photoHeight: 250,
+      tab: 'Церемония · ЗАГС',
+      name: 'Шипиловский Дворец бракосочетания',
+      address: 'Москва, Шипиловский пр., 27',
+      mapsUrl: 'https://yandex.com/maps/-/CPBTF67Y',
+      mapsEmbed: 'https://yandex.ru/map-widget/v1/?um=constructor%3A85b24d192db21a84f169040d30fa6f757aba4282d66f12a2981ee5ebff685283&amp;source=constructor',
+      time: '17:00',
+      photos: [
+        { src: "/src/static/zags_entrance.jpeg", label: 'Парадный вход' },
+        { src: "/src/static/zags_inside.jpg", label: 'Внутренние помещения' },
+        // { src: null, label: 'Внутренний дворик' },
+      ],
+    },
+    {
+      id: 'banquet',
+      photoHeight: 180,
+      tab: 'Банкет · Усадьба',
+      name: 'Усадьба Архангельское',
+      address: 'Московская обл., Красногорский р-н, посёлок Архангельское, 1',
+      mapsUrl: 'https://maps.google.com/?q=Усадьба+Архангельское',
+      mapsEmbed: 'https://maps.google.com/maps?q=Усадьба+Архангельское&output=embed',
+      time: '18:00',
+      photos: [
+        { src: null, label: 'Розовый сад' },
+        { src: null, label: 'Белый зал' },
+        { src: null, label: 'Открытая терраса' },
+      ],
+    },
+  ],
+},
   rsvp: {
     deadline: '1 июня 2025',
     googleFormUrl: 'https://forms.gle/XXXXXXXXXXXXXXXX', // ← вставь свою ссылку

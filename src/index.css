@@ -327,11 +327,11 @@ body {
 .venue-photos {
   display: flex;
   gap: 8px;
-  margin: 8px 1.5rem 0;
+  margin: 8px 0 0;
 }
 .venue-photo-wrap {
   flex: 1;
-  height: 120px;
+  /* height: 120px; */
   overflow: hidden;
 }
 .venue-photo-wrap img {
@@ -624,5 +624,72 @@ body {
   .dresscode-note {
     font-size: 17px;
     max-width: 640px;
+  }
+}
+/* ─── Location tabs ──────────────────────────────── */
+.loc-tabs {
+  display: flex;
+  margin: 0 1.5rem 0;
+  border-bottom: .5px solid var(--sand);
+}
+
+.loc-tab {
+  flex: 1;
+  padding: .9rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .2s, border-color .2s;
+  margin-bottom: -1px;
+}
+
+.loc-tab:hover {
+  color: var(--dark);
+}
+
+.loc-tab--active {
+  color: var(--dark);
+  border-bottom-color: var(--rose);
+}
+
+/* Карта — нужен position: relative на контейнере */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #E8E0D8;
+}
+
+.loc-map-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Время в карточке локации */
+.venue-time {
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: .3rem;
+}
+
+@media (min-width: 1024px) {
+  .map-container {
+    height: 420px;
+  }
+  .loc-tabs {
+    margin: 0 3rem 0;
+  }
+  .loc-tab {
+    font-size: 12px;
   }
 }
