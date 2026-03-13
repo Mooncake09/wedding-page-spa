@@ -354,7 +354,7 @@ body {
 }
 .venue-card {
   background: var(--cream);
-  margin: 0 1.5rem;
+  width: 100%;
   border: .5px solid var(--sand);
   border-top: none;
   padding: 1.4rem 1.6rem;
@@ -547,7 +547,6 @@ body {
     height: 180px;
   }
   .venue-card {
-    margin: 0 3rem;
     padding: 2rem 2.4rem;
   }
   .venue-name {
@@ -617,10 +616,6 @@ body {
     font-size: 16px;
   }
 
-  .venue-card {
-    margin: 0 6rem;
-  }
-
   .dresscode-note {
     font-size: 17px;
     max-width: 640px;
@@ -686,9 +681,7 @@ body {
   .map-container {
     height: 420px;
   }
-  .loc-tabs {
-    margin: 0 3rem 0;
-  }
+  
   .loc-tab {
     font-size: 12px;
   }

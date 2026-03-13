@@ -68,26 +68,26 @@ export default function Location({ config }) {
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Карточка */}
-      <div className="venue-card">
-        <div className="venue-info">
-          <div className="venue-time">{venue.time}</div>
-          <div className="venue-name">{venue.name}</div>
-          <div className="venue-addr">{venue.address}</div>
-          
+        {/* Карточка */}
+        <div className="venue-card">
+          <div className="venue-info">
+            <div className="venue-time">{venue.time}</div>
+            <div className="venue-name">{venue.name}</div>
+            <div className="venue-addr">{venue.address}</div>
+
             className="map-link"
             href={venue.mapsUrl}
             target="_blank"
             rel="noreferrer"
-          <a>
-            Открыть в Яндекс картах →
-          </a>
-        </div>
-        <div className="venue-directions">
-          <div className="directions-label">Как добраться</div>
-          <div className="directions-text">{directions}</div>
+            <a>
+              Открыть в Яндекс картах →
+            </a>
+          </div>
+          <div className="venue-directions">
+            <div className="directions-label">Как добраться</div>
+            <div className="directions-text">{directions}</div>
+          </div>
         </div>
       </div>
     </div>
