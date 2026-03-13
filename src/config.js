@@ -19,8 +19,8 @@ export const config = {
     { time: '21:00', title: 'Танцы & Торт',      desc: 'Первый танец, разрезание торта и вечеринка до рассвета' },
   ],
   dresscode: {
-    title: 'Champagne & Blush',
-    note: 'Просим придерживаться нежной пастельной гаммы. Пожалуйста, избегайте белого и чёрного цвета. Церемония проходит на улице — каблуки приветствуются, но удобная обувь тоже отличный выбор.',
+    title: 'Праздничный и официальный',
+    note: 'Но мы нисколько не обидимся и не расстроимся, если вы придете в том, в чем хотите придти. Мы будем вам рады в любом наряде. ❤️',
     swatches: [
       { color: '#F5ECD7', name: 'Champagne' },
       { color: '#EECDB8', name: 'Blush' },
@@ -34,7 +34,7 @@ location: {
   venues: [
     {
       id: 'ceremony',
-      photoHeight: 250,
+      photoHeight: 300,
       tab: 'Церемония · ЗАГС',
       name: 'Шипиловский Дворец бракосочетания',
       address: 'Москва, Шипиловский пр., 27',
@@ -44,28 +44,26 @@ location: {
       photos: [
         { src: "/src/static/zags_entrance.jpeg", label: 'Парадный вход' },
         { src: "/src/static/zags_inside.jpg", label: 'Внутренние помещения' },
-        // { src: null, label: 'Внутренний дворик' },
       ],
     },
     {
       id: 'banquet',
-      photoHeight: 180,
-      tab: 'Банкет · Усадьба',
-      name: 'Усадьба Архангельское',
-      address: 'Московская обл., Красногорский р-н, посёлок Архангельское, 1',
-      mapsUrl: 'https://maps.google.com/?q=Усадьба+Архангельское',
+      photoHeight: 300,
+      tab: 'Банкет · Кафе',
+      name: 'Ya-cafe 3',
+      address: 'Москва, ул. Ленинская Слобода, 19, стр. 2',
+      mapsUrl: 'https://yandex.com/maps/-/CPBXFJ5B',
       mapsEmbed: 'https://maps.google.com/maps?q=Усадьба+Архангельское&output=embed',
       time: '18:00',
       photos: [
-        { src: null, label: 'Розовый сад' },
-        { src: null, label: 'Белый зал' },
-        { src: null, label: 'Открытая терраса' },
+        { src: "src/static/ya-cafe-3-outside.jpg", label: 'Вход в кафе' },
+        { src: "src/static/ya-cafe-3-inside.png", label: 'Кафе внутри' },
       ],
     },
   ],
 },
   rsvp: {
-    deadline: '1 июня 2025',
+    deadline: '1 мая 2026',
     googleFormUrl: 'https://forms.gle/XXXXXXXXXXXXXXXX', // ← вставь свою ссылку
   },
 }
