@@ -21,13 +21,6 @@ export const config = {
   dresscode: {
     title: 'Праздничный и официальный',
     note: 'Но мы нисколько не обидимся и не расстроимся, если вы придете в том, в чем хотите придти. Мы будем вам рады в любом наряде. ❤️',
-    swatches: [
-      { color: '#F5ECD7', name: 'Champagne' },
-      { color: '#EECDB8', name: 'Blush' },
-      { color: '#D4B896', name: 'Sand' },
-      { color: '#C9B8A8', name: 'Latte' },
-      { color: '#EAE0D5', name: 'Ivory' },
-    ],
   },
 location: {
   directions: '',
@@ -53,7 +46,7 @@ location: {
       name: 'Ya-cafe 3',
       address: 'Москва, ул. Ленинская Слобода, 19, стр. 2',
       mapsUrl: 'https://yandex.com/maps/-/CPBXFJ5B',
-      mapsEmbed: 'https://maps.google.com/maps?q=Усадьба+Архангельское&output=embed',
+      mapsEmbed: 'https://yandex.ru/map-widget/v1/?um=constructor%3A57c08f716ae9a5788980e7cc394377e167ced93088a2b4fb251d05c203abe313&amp;source=constructor',
       time: '18:00',
       photos: [
         { src: "src/static/ya-cafe-3-outside.jpg", label: 'Вход в кафе' },

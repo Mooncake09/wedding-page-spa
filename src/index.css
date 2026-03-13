@@ -329,11 +329,15 @@ body {
   gap: 8px;
   margin: 8px 0 0;
 }
+
 .venue-photo-wrap {
   flex: 1;
-  /* height: 120px; */
   overflow: hidden;
+  aspect-ratio: 4 / 3;  /* прямоугольник, одинаково на всех экранах */
+  position: relative;
+  cursor: pointer;
 }
+
 .venue-photo-wrap img {
   width: 100%;
   height: 100%;
@@ -486,7 +490,7 @@ body {
     text-align: left !important;
   }
   .timer-sep { display: none; }
-  .venue-photo-wrap { height: 90px; }
+  /* .venue-photo-wrap { height: 90px; } */
   .directions-text { text-align: left; }
 }
 
@@ -544,7 +548,7 @@ body {
     height: 420px;
   }
   .venue-photo-wrap {
-    height: 180px;
+    aspect-ratio: 16 / 7;
   }
   .venue-card {
     padding: 2rem 2.4rem;
@@ -620,6 +624,10 @@ body {
     font-size: 17px;
     max-width: 640px;
   }
+
+  .venue-photo-wrap {
+    aspect-ratio: 16 / 7;
+  }
 }
 /* ─── Location tabs ──────────────────────────────── */
 .loc-tabs {
@@ -681,8 +689,73 @@ body {
   .map-container {
     height: 420px;
   }
-  
+
   .loc-tab {
     font-size: 12px;
   }
+}
+/* ─── Lightbox ───────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 34, 26, .92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: lb-in .25s ease;
+}
+
+@keyframes lb-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: .5px solid rgba(250, 247, 242, .3);
+  color: var(--cream);
+  font-size: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, background .2s;
+  z-index: 1001;
+}
+
+.lightbox-close:hover {
+  background: rgba(250, 247, 242, .1);
+  border-color: rgba(250, 247, 242, .6);
+}
+
+.lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-inner img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--sand);
+  opacity: .8;
 }

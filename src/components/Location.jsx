@@ -1,9 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 export default function Location({ config }) {
   const { venues, directions } = config
   const [active, setActive] = useState(0)
+  const [lightbox, setLightbox] = useState(null)
   const venue = venues[active]
+
+  useEffect(() => {
+    if (!lightbox) return
+    const handleKey = e => { if (e.key === 'Escape') setLightbox(null) }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKey)
+    }
+  }, [lightbox])
 
   return (
     <div className="location-section">
@@ -50,19 +63,25 @@ export default function Location({ config }) {
           ))}
         </div>
 
-        {/* Фото — высота передаётся на каждый враппер */}
+        {/* Фото */}
         <div className="venue-photos">
           {venue.photos.map(photo => (
             <div
               key={photo.label}
               className="venue-photo-wrap"
-              style={{ height: venue.photoHeight }}
+              // style={{ height: venue.photoHeight }}
+              onClick={() => photo.src && setLightbox(photo)}
             >
               {photo.src ? (
                 <img src={photo.src} alt={photo.label} />
               ) : (
                 <div className="venue-photo-placeholder">
                   <span>{photo.label}</span>
+                </div>
+              )}
+              {photo.src && (
+                <div className="photo-overlay">
+                  <span className="photo-overlay-icon">⊕</span>
                 </div>
               )}
             </div>
@@ -75,12 +94,12 @@ export default function Location({ config }) {
             <div className="venue-time">{venue.time}</div>
             <div className="venue-name">{venue.name}</div>
             <div className="venue-addr">{venue.address}</div>
-
-            className="map-link"
-            href={venue.mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            <a>
+            <a
+              className="map-link"
+              href={venue.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               Открыть в Яндекс картах →
             </a>
           </div>
@@ -90,6 +109,18 @@ export default function Location({ config }) {
           </div>
         </div>
       </div>
+
+      {/* Лайтбокс рендерится прямо в body через портал */}
+      {lightbox && createPortal(
+        <div className="lightbox" onClick={() => setLightbox(null)}>
+          <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+          <div className="lightbox-inner" onClick={e => e.stopPropagation()}>
+            <img src={lightbox.src} alt={lightbox.label} />
+            <p className="lightbox-label">{lightbox.label}</p>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   )
 }
