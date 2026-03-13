@@ -2,9 +2,9 @@ export default function InfoGrid({ config }) {
   const { event } = config
 
   const cells = [
-    { icon: '◎', label: 'Церемония',  value: '15:00' },
+    { icon: '◎', label: 'Церемония',  value: '17:00' },
     { icon: '◈', label: 'Место',      value: event.venue },
-    { icon: '◉', label: 'Банкет',     value: '18:00 · Белый зал' },
+    { icon: '◉', label: 'Банкет',     value: '18:30 · Ya-cafe 3' },
     { icon: '◌', label: 'Дресс-код',  value: event.dressCode },
   ]
 

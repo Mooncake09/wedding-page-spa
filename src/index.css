@@ -236,14 +236,18 @@ body {
   border: 2px solid var(--cream);
   outline: 1px solid var(--rose);
   flex-shrink: 0;
-  margin-top: 6px;
+  margin-top: 46px;
   position: relative;
   z-index: 1;
 }
 .t-event--left .t-dot {
-  margin-right: -5px; /* прижимаем точку к центральной линии */
+  order: -1;          /* точка перед контентом */
+  margin-left: auto;  /* прижимаем к правому краю своей половины */
+  margin-right: -5px;
 }
 .t-event--right .t-dot {
+  order: -1;          /* точка перед контентом */
+  margin-right: auto;
   margin-left: -5px;
 }
 .t-time {
