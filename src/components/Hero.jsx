@@ -4,7 +4,7 @@ export default function Hero({ config }) {
 
   return (
     <div className="hero">
-      <p className="invite-label">с радостью приглашают вас разделить их счастье</p>
+      <p className="invite-label">с радостью приглашают вас на свою свадьбу</p>
       <div className="names">
         {person1}
         <span className="ampersand">&amp;</span>

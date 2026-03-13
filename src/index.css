@@ -188,14 +188,17 @@ body {
 
 /* ─── Timeline ───────────────────────────────────── */
 .timeline {
-  margin: 2rem 1.5rem;
   position: relative;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 .timeline::before {
   content: '';
   position: absolute;
   left: 50%;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   width: .5px;
   background: var(--sand);
   transform: translateX(-50%);
@@ -204,13 +207,27 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  width: 50%;
+  padding-right: 2.5rem;
 }
-.t-event.odd {
-  flex-direction: row-reverse;
+.t-event--left {
+  margin-left: 0;
   text-align: right;
+  flex-direction: row-reverse;
+  padding-right: 2.5rem;
+  padding-left: 0;
 }
-.t-content { flex: 1; }
+.t-event--right {
+  margin-left: 50%;
+  text-align: left;
+  flex-direction: row;
+  padding-left: 2.5rem;
+  padding-right: 0;
+}
+.t-content {
+  flex: 1;
+}
 .t-dot {
   width: 10px;
   height: 10px;
@@ -222,6 +239,12 @@ body {
   margin-top: 6px;
   position: relative;
   z-index: 1;
+}
+.t-event--left .t-dot {
+  margin-right: -5px; /* прижимаем точку к центральной линии */
+}
+.t-event--right .t-dot {
+  margin-left: -5px;
 }
 .t-time {
   font-size: 11px;
@@ -243,6 +266,28 @@ body {
   line-height: 1.6;
 }
 
+/* Мобильная версия — всё в одну колонку */
+@media (max-width: 520px) {
+  .timeline::before {
+    left: 6px;
+  }
+  .t-event,
+  .t-event--left,
+  .t-event--right {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+    flex-direction: row;
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+  .t-event--left .t-dot,
+  .t-event--right .t-dot {
+    margin-left: -5px;
+    margin-right: 0;
+  }
+  .t-time { font-size: 10px; }
+}
 /* ─── Dress Code ─────────────────────────────────── */
 .dresscode-section {
   padding: 2.5rem 2rem;
