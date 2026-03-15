@@ -808,3 +808,39 @@ body {
   color: var(--sand);
   opacity: .8;
 }
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--muted);
+  opacity: .6;
+}
+
+.footer-credit {
+  font-size: 10px;
+  letter-spacing: .05em;
+  color: var(--rose);
+  text-decoration: none;
+  border-bottom: .5px solid var(--rose);
+  padding-bottom: 1px;
+  opacity: 1;
+  transition: opacity .2s;
+  white-space: nowrap;
+}
+
+.footer-credit:hover {
+  opacity: .7;
+}
+
+@media (max-width: 520px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+    text-align: center;
+  }
+}

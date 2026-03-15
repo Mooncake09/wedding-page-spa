@@ -1,3 +1,8 @@
+import zagsEntrance from './assets/images/zags_entrance.jpeg'
+import zagsInside from './assets/images/zags_inside.jpg'
+import cafeEntrance from './assets/images/ya-cafe-3-outside.jpg'
+import cafeInside from './assets/images/ya-cafe-3-inside.png'
+
 export const config = {
   couple: {
     person1: 'Захар',
@@ -35,8 +40,8 @@ location: {
       mapsEmbed: 'https://yandex.ru/map-widget/v1/?um=constructor%3A85b24d192db21a84f169040d30fa6f757aba4282d66f12a2981ee5ebff685283&amp;source=constructor',
       time: '17:00',
       photos: [
-        { src: "/src/static/zags_entrance.jpeg", label: 'Парадный вход' },
-        { src: "/src/static/zags_inside.jpg", label: 'Внутренние помещения' },
+        { src: zagsEntrance, label: 'Парадный вход' },
+        { src: zagsInside, label: 'Внутренние помещения' },
       ],
     },
     {
@@ -49,14 +54,14 @@ location: {
       mapsEmbed: 'https://yandex.ru/map-widget/v1/?um=constructor%3A57c08f716ae9a5788980e7cc394377e167ced93088a2b4fb251d05c203abe313&amp;source=constructor',
       time: '18:00',
       photos: [
-        { src: "src/static/ya-cafe-3-outside.jpg", label: 'Вход в кафе' },
-        { src: "src/static/ya-cafe-3-inside.png", label: 'Кафе внутри' },
+        { src: cafeEntrance, label: 'Вход в кафе' },
+        { src: cafeInside, label: 'Кафе внутри' },
       ],
     },
   ],
 },
   rsvp: {
     deadline: '1 мая 2026',
-    googleFormUrl: 'https://forms.gle/XXXXXXXXXXXXXXXX', // ← вставь свою ссылку
+    googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfTUk9l4N_Xz2KBQfeUWGGVkuLCAWDJUuZj5VhjaiHc6VI3Ag/viewform', // ← вставь свою ссылку
   },
 }
