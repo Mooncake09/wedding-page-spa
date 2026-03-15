@@ -844,3 +844,40 @@ body {
     text-align: center;
   }
 }
+
+/* ─── Photo Pair ─────────────────────────────────── */
+.photo-pair {
+  display: flex;
+  gap: 8px;
+  margin: 0 auto 2.5rem;
+  max-width: 900px;
+  padding: 0 1.5rem;
+}
+
+.photo-pair-item {
+  flex: 1;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.photo-pair-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.photo-pair-item:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 520px) {
+  .photo-pair {
+    gap: 6px;
+    padding: 0 1rem;
+  }
+  .photo-pair-item {
+    aspect-ratio: 2 / 3;
+  }
+}
