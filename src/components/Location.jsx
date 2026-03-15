@@ -69,7 +69,6 @@ export default function Location({ config }) {
             <div
               key={photo.label}
               className="venue-photo-wrap"
-              // style={{ height: venue.photoHeight }}
               onClick={() => photo.src && setLightbox(photo)}
             >
               {photo.src ? (
