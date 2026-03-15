@@ -12,7 +12,6 @@ export default function Timeline({ events }) {
               <div className="t-name">{ev.title}</div>
               <div className="t-desc">{ev.desc}</div>
             </div>
-            <div className="t-dot" />
           </div>
         ))}
       </div>
